@@ -1,0 +1,70 @@
+<div class="container">
+  <!-- Filters and Controls -->
+  <div class="filters">
+    <!-- Limit Results -->
+    <div class="filter-group">
+      <label for="limit">Limit Results:</label>
+      <select id="limit" (change)="onLimitChange($event)">
+        <option value="5">Top 5</option>
+        <option value="10">Top 10</option>
+        <option value="20">Top 20</option>
+      </select>
+    </div>
+
+    <!-- Sort Results -->
+    <div class="filter-group">
+      <label for="sort">Sort By:</label>
+      <select id="sort" (change)="onSortChange($event)">
+        <option value="price">Price</option>
+        <option value="rating">Rating</option>
+      </select>
+    </div>
+
+    <!-- Categories -->
+    <div class="filter-group">
+      <label for="category">Category:</label>
+      <select id="category" (change)="onCategoryChange($event)">
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Product Form -->
+  <div class="product-form">
+    <h2>Add New Product</h2>
+    <form [formGroup]="productForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input id="title" name="title" formControlName="title" required>
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input id="price" name="price" formControlName="price" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea id="description" name="description" formControlName="description" required></textarea>
+      </div>
+      <div class="form-group">
+        <label for="category">Category</label>
+        <input id="category" name="category" formControlName="category" required>
+      </div>
+      <div class="form-group">
+        <label for="image">Image URL</label>
+        <input id="image" name="image" formControlName="image" required>
+      </div>
+      <button type="submit">Add Product</button>
+    </form>
+  </div>
+
+  <!-- Product List -->
+  <div class="product-list">
+    <div class="product-card" *ngFor="let product of products">
+      <img [src]="product.image" alt="{{ product.title }}">
+      <h3>{{ product.title }}</h3>
+      <p class="price">${{ product.price }}</p>
+      <p class="category">{{ product.category }}</p>
+      <button (click)="onDelete(product.id)">Delete</button>
+    </div>
+  </div>
+</div>

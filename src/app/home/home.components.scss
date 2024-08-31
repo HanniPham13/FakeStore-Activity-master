@@ -1,0 +1,33 @@
+.welcome-container {
+  text-align: center;
+  padding: 50px;
+  background-color: #f0f0f0; // Light background color
+  border-radius: 8px; // Rounded corners
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Subtle shadow effect
+}
+
+h1 {
+  font-size: 2.5em;
+  color: #333; // Dark color for the text
+}
+
+p {
+  font-size: 1.2em;
+  color: #666; // Medium gray color for the text
+}
+
+.get-started-button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.1em;
+  color: #fff; // White text
+  background-color: #007bff; // Blue background color
+  border: none;
+  border-radius: 5px; // Rounded corners for the button
+  cursor: pointer;
+  transition: background-color 0.3s ease; // Smooth color transition on hover
+}
+
+.get-started-button:hover {
+  background-color: #0056b3; // Darker blue on hover
+}
