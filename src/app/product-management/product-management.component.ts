@@ -11,7 +11,7 @@ import { Product } from '../../product.model';  // Import Product from the corre
 export class ProductManagementComponent implements OnInit {
   products: Product[] = [];
   productForm: FormGroup;
-  limit: number = 5;
+  limit: number = 50;
   sortBy: string = 'price';
   selectedCategory: string = '';
   categories: string[] = [];  // Assuming you'll fetch categories
